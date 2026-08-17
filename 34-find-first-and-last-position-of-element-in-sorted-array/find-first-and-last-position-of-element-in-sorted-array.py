@@ -2,10 +2,10 @@ class Solution:
     def searchRange(self, nums: List[int], target: int) -> List[int]:
         low = 0
         high = len(nums) - 1
-        while (low <= high) :
+        while (low < high) :
             mid = int((low+high)/2)
             if (nums[mid]>=target):
-                high = mid - 1
+                high = mid
             else :
                 low = mid + 1
         first_oc = low
@@ -14,11 +14,11 @@ class Solution:
             return [-1, -1]
         
         low = 0
-        high = len(nums)-1
-        while (low<=high) :
+        high = len(nums)
+        while (low<high) :
             mid = int((low+high)/2)
             if (nums[mid]>target):
-                high = mid - 1
+                high = mid
             else :
                 low = mid + 1
         last_oc = low - 1
